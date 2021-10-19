@@ -1,0 +1,38 @@
+html * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    min-height: 20vh;
+}
+
+.imgMail {
+    width: 30px;
+}
+
+.navigation {
+    background-color: rgb(209, 207, 207);
+}
+
+.navigationDark {
+    background-color: rgb(173, 171, 171);
+}
+
+footer {
+    min-height: 5vh;
+}
+
+.pBox {
+    text-align: justify;
+}
+
+.imgLogo {
+    width: 70px;
+}
+
+#loader  {
+    border: transparent;
+}
+
