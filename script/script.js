@@ -38,6 +38,7 @@ function addFetch(chamber) {
 } 
 
 function runProgram(data) {
+    
     /* VARIABLES */
     
     var stateOption = "ALL"
@@ -47,6 +48,7 @@ function runProgram(data) {
     var members = data
     
     if (document.title == "Home TGIF") {
+        
         /* CODE FOR INDEX HTML */
 
         /* read more or less button */
@@ -226,32 +228,10 @@ function runProgram(data) {
             statistics.totalIndependents = independentsList.length
 
             statistics.averageMVPIndependet = (independentsList.reduce((count, independet) => count + independet.missed_votes_pct, 0)) / statistics.totalIndependents
-            console.log(statistics.averageMVPIndependet)
             statistics.averageVWPIndependet = (independentsList.reduce((count, independet) => count + independet.votes_with_party_pct, 0)) / statistics.totalIndependents
-            console.log(statistics.averageVWPIndependet)
 
             statistics.totalAllMembers = newMembersList.length  
 
-
-            // if (independentsList >= 0) {
-
-            // }
-
-            // if (independentsList.length >= 0) {
-            //     statistics.totalAverageVWP = "-" 
-            //     console.log("entro if")
-            // } else {
-            //     statistics.totalAverageVWP = (statistics.averageVWPRepublicans + statistics.averageVWPDemocraats + statistics.averageVWPIndependet) / 3
-            //     console.log("entro else")
-            // }
-
-
-
-            // if (!independentsList) {
-            //     statistics.totalAverageVWP = 0 
-            // } else {
-            //     statistics.totalAverageVWP = (statistics.averageVWPRepublicans + statistics.averageVWPDemocraats + statistics.averageVWPIndependet) / 3
-            // }
         }
         
         /* DETAIL LISTS TO STATISTICS OBJECT IN ATTENDANCE PAGES */
@@ -316,7 +296,7 @@ function runProgram(data) {
             getAttendaceTableTr2.innerHTML = `<td>Democrats</td> <td>${object.totalDemocrats}</td> <td>${(object.averageMVPDemocrats).toFixed(2)} %</td>`
             
             let getAttendaceTableTr3 = document.getElementById("mVPTr3")
-            getAttendaceTableTr3.innerHTML = `<td>Independets</td> <td>${object.totalIndependents}</td> <td>${(!object.totalIndependents === "NaN" ? object.averageMVPIndependet.toFixed(2) : "-")} </td>`
+            getAttendaceTableTr3.innerHTML = `<td>Independents</td> <td>${object.totalIndependents}</td> <td>${(!object.totalIndependents === "NaN" ? object.averageMVPIndependet.toFixed(2) : "-")} </td>`
             
             let getAttendaceTableTr4 = document.getElementById("mVPTr4")
             getAttendaceTableTr4.innerHTML = `<td>Total</td> <td>${object.totalAllMembers}</td> <td>${(!object.totalIndependents === "NaN" ? object.averageVWPIndependet.toFixed(2) : "-")} </td>`
@@ -335,9 +315,6 @@ function runProgram(data) {
             
             let getLoyaltyTableTr4 = document.getElementById("vWPTr4")
             getLoyaltyTableTr4.innerHTML = `<td>Total</td> <td>${object.totalAllMembers}</td> <td>${(!object.totalIndependents === "NaN" ? object.averageVWPIndependet.toFixed(2) : "-")} </td>`
-            if (object.totalIndependents === "NaN") {
-                console.log("entro")    
-            }
         }
 
 
@@ -386,6 +363,5 @@ function runProgram(data) {
         }
         getBasicStatistics()
         addDataToTables(newMembersList, statistics)
-        console.log(statistics)
     }
 }

@@ -3,6 +3,9 @@ html * {
     padding: 0;
     box-sizing: border-box;
 }
+body {
+    overflow-y: scroll;
+}
 
 header {
     min-height: 20vh;
@@ -34,5 +37,9 @@ footer {
 
 #loader  {
     border: transparent;
+    height: auto;
 }
 
+.missedVotesTable > tr, .votesWPartyTable > tr {
+    height: 8.5vh;
+}
